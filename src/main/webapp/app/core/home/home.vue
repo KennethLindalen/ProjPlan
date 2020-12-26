@@ -1,45 +1,59 @@
 <template>
     <div class="home row">
-        <div class="col-md-3">
-            <span class="hipster img-fluid rounded"></span>
-        </div>
-        <div class="col-md-9">
-            <h1 class="display-4" v-text="$t('home.title')">Welcome, Java Hipster!</h1>
-            <p class="lead" v-text="$t('home.subtitle')">This is your homepage</p>
-
-            <div>
-                <div class="alert alert-success" v-if="authenticated">
-                    <span v-if="username" v-text="$t('home.logged.message', { 'username': username})">You are logged in as user "{{username}}"</span>
-                </div>
-
-                <div class="alert alert-warning" v-if="!authenticated">
-                    <span v-text="$t('global.messages.info.authenticated.prefix')">If you want to </span>
-                    <a class="alert-link" v-on:click="openLogin()" v-text="$t('global.messages.info.authenticated.link')">sign in</a><span v-html="$t('global.messages.info.authenticated.suffix')">, you can try the default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").</span>
-                </div>
-                <div class="alert alert-warning" v-if="!authenticated">
-                    <span v-text="$t('global.messages.info.register.noaccount')">You don't have an account yet?</span>&nbsp;
-                    <router-link class="alert-link" to="/register" v-text="$t('global.messages.info.register.link')">Register a new account</router-link>
-                </div>
+            <div class="col jumbotron"  v-if="!authenticated">
+                <h1 class="display-4">Welcome to Kresty!</h1>
+                <p>A place to plan and orgranize your projects!</p>
+                <p class="lead" v-text="$t('home.subtitle')">This is your homepage</p>
             </div>
-
-            <p v-text="$t('home.question')">
-                If you have any question on JHipster:
-            </p>
-
-            <ul>
-                <li><a href="https://www.jhipster.tech/" target="_blank" rel="noopener" v-text="$t('home.link.homepage')">JHipster homepage</a></li>
-                <li><a href="http://stackoverflow.com/tags/jhipster/info" target="_blank" rel="noopener" v-text="$t('home.link.stackoverflow')">JHipster on Stack Overflow</a></li>
-                <li><a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank" rel="noopener" v-text="$t('home.link.bugtracker')">JHipster bug tracker</a></li>
-                <li><a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" rel="noopener" v-text="$t('home.link.chat')">JHipster public chat room</a></li>
-                <li><a href="https://twitter.com/jhipster" target="_blank" rel="noopener" v-text="$t('home.link.follow')">follow @jhipster on Twitter</a></li>
-            </ul>
-
-            <p>
-                <span v-text="$t('home.like')">If you like JHipster, don't forget to give us a star on</span> <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener" v-text="$t('home.github')">GitHub</a>!
-            </p>
+        <div class="col jumbotron" v-if="authenticated">
+            <h1 v-if="username">Welcome, {{username}}!</h1>
+            <p>A place to plan and orgranize your projects!</p>
+            <p class="lead" v-text="$t('home.subtitle')">This is your homepage</p>
         </div>
+
+            <div class="col" v-if="!authenticated">
+                    <h2 class="display-5">Login</h2>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" v-model="login" style="background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"  v-model="password" style="background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
+
+                    <div class="alert alert-warning mt-3" v-if="!authenticated">
+                        <span v-text="$t('global.messages.info.register.noaccount')">You don't have an account yet?</span>&nbsp;
+                        <router-link class="alert-link" to="/register" v-text="$t('global.messages.info.register.link')">Register a new account</router-link>
+                    </div>
+                    <button id="login-btn" type="submit" class="btn btn-dark" v-on:click="doLogin">Submit</button>
+                    <b-form-checkbox id="rememberMe" name="rememberMe" v-model="rememberMe" checked >
+                        <span>Remember me</span>
+                    </b-form-checkbox>
+                    </div>
+                </div>
     </div>
 </template>
 
-<script lang="ts" src="./home.component.ts">
-</script>
+<script lang="ts" src="./home.component.ts"></script>
+<style>
+    #login-btn{
+        width: 100%;
+    }
+
+    .row {
+        display: flex;
+        width: 100%;
+    }
+    .col {
+        flex: 1;
+        padding: 16px;
+    }
+
+    /* If the browser window is smaller than 600px, make the columns stack on top of each other */
+    @media only screen and (max-width: 600px) {
+        .col {
+            display: block;
+            width: 100%;
+        }
+    }
+</style>

@@ -48,6 +48,13 @@ public class CacheConfiguration {
             createCache(cm, dev.kennethlindalen.domain.User.class.getName());
             createCache(cm, dev.kennethlindalen.domain.Authority.class.getName());
             createCache(cm, dev.kennethlindalen.domain.User.class.getName() + ".authorities");
+            createCache(cm, dev.kennethlindalen.domain.Project.class.getName());
+            createCache(cm, dev.kennethlindalen.domain.Project.class.getName() + ".bugs");
+            createCache(cm, dev.kennethlindalen.domain.Project.class.getName() + ".documents");
+            createCache(cm, dev.kennethlindalen.domain.Project.class.getName() + ".users");
+            createCache(cm, dev.kennethlindalen.domain.Kanban.class.getName());
+            createCache(cm, dev.kennethlindalen.domain.Document.class.getName());
+            createCache(cm, dev.kennethlindalen.domain.Bug.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

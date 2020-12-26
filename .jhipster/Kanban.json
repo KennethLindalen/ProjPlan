@@ -1,0 +1,29 @@
+{
+  "name": "Kanban",
+  "fields": [
+    {
+      "fieldName": "data",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "project",
+      "otherEntityRelationshipName": "kanban",
+      "relationshipName": "project",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20201226092802",
+  "entityTableName": "kanban",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

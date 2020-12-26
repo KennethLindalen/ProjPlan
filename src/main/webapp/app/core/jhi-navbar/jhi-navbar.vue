@@ -3,18 +3,18 @@
         <b-navbar-brand class="logo" b-link to="/">
             <span class="logo-img"></span>
             <span v-text="$t('global.title')" class="navbar-title">ProjPlanner</span> <span class="navbar-version">{{version}}</span>
-        </b-navbar-brand>      
-        <b-navbar-toggle 
-        right 
-        class="jh-navbar-toggler d-lg-none" 
-        href="javascript:void(0);"  
-        data-toggle="collapse" 
-        target="header-tabs" 
-        aria-expanded="false" 
+        </b-navbar-brand>
+        <b-navbar-toggle
+        right
+        class="jh-navbar-toggler d-lg-none"
+        href="javascript:void(0);"
+        data-toggle="collapse"
+        target="header-tabs"
+        aria-expanded="false"
         aria-label="Toggle navigation">
             <font-awesome-icon icon="bars" />
         </b-navbar-toggle>
-           
+
         <b-collapse is-nav id="header-tabs">
             <b-navbar-nav class="ml-auto">
                 <b-nav-item to="/" exact>
@@ -32,6 +32,22 @@
                         <font-awesome-icon icon="th-list" />
                         <span v-text="$t('global.menu.entities.main')">Entities</span>
                     </span>
+                    <b-dropdown-item to="/project">
+                        <font-awesome-icon icon="asterisk" />
+                        <span v-text="$t('global.menu.entities.project')">Project</span>
+                    </b-dropdown-item>
+                    <b-dropdown-item to="/kanban">
+                        <font-awesome-icon icon="asterisk" />
+                        <span v-text="$t('global.menu.entities.kanban')">Kanban</span>
+                    </b-dropdown-item>
+                    <b-dropdown-item to="/document">
+                        <font-awesome-icon icon="asterisk" />
+                        <span v-text="$t('global.menu.entities.document')">Document</span>
+                    </b-dropdown-item>
+                    <b-dropdown-item to="/bug">
+                        <font-awesome-icon icon="asterisk" />
+                        <span v-text="$t('global.menu.entities.bug')">Bug</span>
+                    </b-dropdown-item>
                     <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
                 </b-nav-item-dropdown>
                 <b-nav-item-dropdown

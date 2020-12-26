@@ -30,6 +30,10 @@ import ConfigurationService from '@/admin/configuration/configuration.service';
 import TrackerService from './admin/tracker/tracker.service';
 /* tslint:disable */
 
+import ProjectService from '@/entities/project/project.service';
+import KanbanService from '@/entities/kanban/kanban.service';
+import DocumentService from '@/entities/document/document.service';
+import BugService from '@/entities/bug/bug.service';
 // jhipster-needle-add-entity-service-to-main-import - JHipster will import entities services here
 
 /* tslint:enable */
@@ -94,6 +98,10 @@ new Vue({
     trackerService: () => trackerService,
     alertService: () => alertService,
     translationService: () => translationService,
+    projectService: () => new ProjectService(),
+    kanbanService: () => new KanbanService(),
+    documentService: () => new DocumentService(),
+    bugService: () => new BugService(),
     // jhipster-needle-add-entity-service-to-main - JHipster will import entities services here
     accountService: () => accountService,
   },

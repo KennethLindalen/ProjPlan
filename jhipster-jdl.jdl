@@ -1,0 +1,30 @@
+entity Project {
+	projectName String required minlength(3)
+}
+
+entity Kanban {
+	data String
+}
+
+entity Document {
+	title String required,
+    text String
+}
+
+entity Bug {
+	bugTitle String required,
+    bugInfo String required,
+    priority String required
+}
+
+relationship OneToOne {
+	Project to Kanban
+}
+
+relationship ManyToOne {
+	Bug{Project(projectName)} to Project,
+    Document{Project} to Project,
+    Project{user(login)} to User
+}
+
+
