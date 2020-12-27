@@ -23,7 +23,7 @@ relationship OneToOne {
 
 relationship ManyToOne {
 	Bug{Project(projectName)} to Project,
-    Document{Project} to Project,
+    Document{Project(projectName} to Project,
     Project{user(login)} to User
 }
 
