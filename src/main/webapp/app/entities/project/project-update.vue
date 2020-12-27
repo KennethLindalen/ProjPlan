@@ -23,13 +23,6 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="form-control-label" v-text="$t('projPlannerApp.project.kanban')" for="project-kanban">Kanban</label>
-                        <select class="form-control" id="project-kanban" name="kanban" v-model="project.kanban">
-                            <option v-bind:value="null"></option>
-                            <option v-bind:value="project.kanban && kanbanOption.id === project.kanban.id ? project.kanban : kanbanOption" v-for="kanbanOption in kanbans" :key="kanbanOption.id">{{kanbanOption.id}}</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
                         <label class="form-control-label" v-text="$t('projPlannerApp.project.user')" for="project-user">User</label>
                         <select class="form-control" id="project-user" name="user" v-model="project.user">
                             <option v-bind:value="null"></option>
