@@ -86,9 +86,9 @@ public class ProjectResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of projects in body.
      */
     @GetMapping("/projects")
-    public List<Project> getAllProjects() {
-        log.debug("REST request to get all Projects");
-        return projectRepository.findAll();
+    public List<Project> getAllProjectsByCurrentUser() {
+        log.debug("REST request to get all Projects for specific user");
+        return projectRepository.findByUserIsCurrentUser();
     }
 
     /**
