@@ -1,6 +1,7 @@
 import Component from 'vue-class-component';
 import { Inject, Vue } from 'vue-property-decorator';
 import AccountService from '@/account/account.service';
+import router from 'vue-router';
 import axios from 'axios';
 
 @Component
@@ -28,6 +29,7 @@ export default class Home extends Vue {
         }
         this.authenticationError = false;
         this.accountService().retrieveAccount();
+        this.$router.push('Dashboard');
       })
       .catch(() => {
         this.authenticationError = true;
