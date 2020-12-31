@@ -3,7 +3,7 @@
     <div id="app-header">
       <jhi-navbar></jhi-navbar>
     </div>
-    <div class="container-fluid">
+    <div class="container">
       <div class="card jh-card">
         <router-view></router-view>
       </div>
