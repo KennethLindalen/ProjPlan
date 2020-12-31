@@ -13,6 +13,7 @@ import account from '@/router/account.ts';
 import admin from '@/router/admin.ts';
 import entities from '@/router/entities.ts';
 import pages from '@/router/pages.ts';
+import dashboard from '@/router/dashboard';
 
 Vue.use(Router);
 
@@ -40,6 +41,7 @@ export default new Router({
     ...account,
     ...admin,
     ...entities,
-    ...pages
+    ...pages,
+    ...dashboard
   ]
 });
