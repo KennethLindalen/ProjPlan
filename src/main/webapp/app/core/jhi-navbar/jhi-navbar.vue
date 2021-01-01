@@ -23,33 +23,12 @@
                         <span v-text="$t('global.menu.home')">Home</span>
                     </span>
                 </b-nav-item>
-                <b-nav-item-dropdown
-                    right
-                    id="entity-menu"
-                    v-if="authenticated"
-                    active-class="active" class="pointer">
-                    <span slot="button-content" class="navbar-dropdown-menu">
-                        <font-awesome-icon icon="th-list" />
-                        <span v-text="$t('global.menu.entities.main')">Entities</span>
+                    <b-nav-item to="/dashboard" exact>
+                    <span>
+                        <font-awesome-icon icon="column" />
+                        <span >Dashboard</span>
                     </span>
-                    <b-dropdown-item to="/project">
-                        <font-awesome-icon icon="asterisk" />
-                        <span v-text="$t('global.menu.entities.project')">Project</span>
-                    </b-dropdown-item>
-                    <b-dropdown-item to="/kanban">
-                        <font-awesome-icon icon="asterisk" />
-                        <span v-text="$t('global.menu.entities.kanban')">Kanban</span>
-                    </b-dropdown-item>
-                    <b-dropdown-item to="/document">
-                        <font-awesome-icon icon="asterisk" />
-                        <span v-text="$t('global.menu.entities.document')">Document</span>
-                    </b-dropdown-item>
-                    <b-dropdown-item to="/bug">
-                        <font-awesome-icon icon="asterisk" />
-                        <span v-text="$t('global.menu.entities.bug')">Bug</span>
-                    </b-dropdown-item>
-                    <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
-                </b-nav-item-dropdown>
+                    </b-nav-item>
                 <b-nav-item-dropdown
                     right
                     id="admin-menu"
